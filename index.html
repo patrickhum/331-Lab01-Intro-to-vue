@@ -30,8 +30,12 @@
             <p v-else="inventory">Out of Stock</p>
             <p v-if="onSale">The product is on sale</p>
             <p v-else="onSale">The product is not on sale</p>
+            <ul>
+                <li v-for="detail in details">{{details}}</li>
+            </ul>
+            <div v-for="variant in variants" :key="variant.id">{{variant.color}}</div>
         </div>
-
+        <div v-for="sizes">{{sizes.join(', ')}}</div>
     </div>
 
     <!-- Import Js -->
