@@ -9,8 +9,6 @@ const productDetails = {
     },
     setup(props) {
         const details = ref(props.details)
-        return { 
-            details
-        }
+        return { details }
     }
 }
