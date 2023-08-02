@@ -1,6 +1,6 @@
 const { createApp, ref, computed } = Vue
 
-createApp({
+const app = createApp({
     setup() {
         const product = ref('Socks')
         const brand = ref('SE331')
@@ -37,6 +37,7 @@ createApp({
             'L'
         ])
         const cart = ref(0)
+        const premium = ref(true)
         function addToCart() {
             cart.value += 1
         }
@@ -54,6 +55,7 @@ createApp({
             brand,
             title,
             image,
+            details,
             updateVariant,
             productlink,
             inStock,
@@ -64,9 +66,13 @@ createApp({
             variants,
             sizes,
             cart,
+            premium,
             addToCart,
             updateImage,
             inStockstatus
         }
     }
-}).mount('#app')
+})
+
+app.component('product-display', productDisplay)
+app.mount('#app')
